@@ -1,0 +1,6 @@
+{
+  "name": "Análisis de Encuesta con IA",
+  "description": "Una aplicación web que recopila respuestas de encuestas de talleres de fotografía y utiliza la API de Gemini para generar un análisis detallado y sugerencias de mejora.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}

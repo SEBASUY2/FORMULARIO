@@ -1,0 +1,50 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @apply bg-gray-950;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-gray-900/50 backdrop-blur-2xl border border-gray-700/50 rounded-2xl shadow-2xl shadow-black/40;
+  }
+}
+
+@layer utilities {
+  .background-gradient {
+    @apply absolute inset-0 -z-10 overflow-hidden;
+  }
+  .background-gradient::before {
+    @apply content-[''] absolute top-0 left-0 h-full w-full;
+    background: radial-gradient(circle at 10% 20%, theme(colors.indigo.500/0.3) 0%, transparent 35%),
+                radial-gradient(circle at 90% 80%, theme(colors.purple.500/0.3) 0%, transparent 35%);
+    filter: blur(100px);
+    animation: spin-slow 25s linear infinite;
+  }
+  
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+}
